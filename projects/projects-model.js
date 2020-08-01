@@ -28,9 +28,9 @@ function findTasks(id) {
 
 function findResources(id) {
   return db('projects_resources as pr')
-  .where('pr.project_id', id)
-  .join('resources as r', 'r.id', 'pr.resource_id')
-  .select('pr.project_id as Project')
+  .where('pr.resource_id', id)
+  .join('projects as p', 'p.id', 'pr.project_id')
+  .select('p.name as Project')
 }
 
 function add(projectData) {

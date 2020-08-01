@@ -21,4 +21,9 @@ router.get('/:id/projects', async (req, res, next) => {
   }
 })
 
+router.post('/', async (req, res, next) => {
+  const newResource = await Project.addResource(req.body);
+  res.status(201).json(newResource);
+})
+
 module.exports = router;

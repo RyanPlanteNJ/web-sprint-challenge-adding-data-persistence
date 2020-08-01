@@ -33,4 +33,25 @@ router.get('/:id/tasks', validateProjectId, async (req,res, next) => {
   }
 })
 
+router.post('/', async (req, res, next) => {
+  const project = await Projects.add(req.body)
+  res.status(200).json(project)
+})
+
+router.post('/:id/tasks', async (req, res) => {
+  try {
+    const newTask = await Projects.addTask(req.body);
+    if(newTask){
+      res.status(201).json(newPost);
+    } else {
+      res.status(400).json({
+        message: 'Missing or incorrect Data'
+      });
+    }
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+
 module.exports = router
