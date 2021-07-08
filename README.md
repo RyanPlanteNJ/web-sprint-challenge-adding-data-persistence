@@ -48,11 +48,20 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. Explain the difference between `Relational Databases` and `SQL`.
 
+  //Relational Databases is a series of tables consisting of columns of rows. Each table is somehow related to another table, through a foreign key. SQL is the code we use to pull the data from those tables.
+
 2. Why do tables need a `primary key`?
+
+  //We use a primary key so we can easily identify a record (one row) in a table. It doesn't necessarily have to be an integer, just some unique identifer.
+
 
 3. What is the name given to a table column that references the primary key on another table.
 
+  //The name that is given to a table that references a primary key is called the foreign key. These are used so we can pull information from a secondary table by calling the primary key that the foreign key represents.
+
 4. What do we need in order to have a _many to many_ relationship between two tables.
+
+  //We need some sort of bridge table in order to have a many to many relationship.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
@@ -60,27 +69,27 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project
+- [x] Create a forked copy of this project
 - [ ] Add your team lead as collaborator on Github
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!)
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
-- [ ] Push commits: git push origin `<firstName-lastName>`
+- [x] Clone your OWN version of the repository (Not Lambda's by mistake!)
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly
+- [x] Push commits: git push origin `<firstName-lastName>`
 
 ### Task 2: Project Requirements
 
 Your finished project must include all of the following requirements:
 
-- [ ] Design the data model and use _knex migrations_ to create the database and tables needed to satisfy the following business rules:
-  - [ ] a `project` can have multiple `tasks`.
-  - [ ] a `task` belongs to only one `project`.
-  - [ ] a `project` can use multiple `resources`. Example of `resources` are: computer, conference room, microphone, delivery van.
-  - [ ] the same `resource` can be used in multiple `projects`.
-  - [ ] when adding `projects` the client must provide a name, the description is optional.
-  - [ ] when adding `resources` the client must provide a name, the description is optional.
-  - [ ] when adding a `task` the client must provide a description, the notes are optional.
-  - [ ] when adding a `task` the client must provide the `id` of an existing project.
-  - [ ] for `projects` and `tasks` if no value is provided for the `completed` property, the API should provide a default value of `false`.
+- [x] Design the data model and use _knex migrations_ to create the database and tables needed to satisfy the following business rules:
+  - [x] a `project` can have multiple `tasks`.
+  - [x] a `task` belongs to only one `project`.
+  - [x] a `project` can use multiple `resources`. Example of `resources` are: computer, conference room, microphone, delivery van.
+  - [x] the same `resource` can be used in multiple `projects`.
+  - [x] when adding `projects` the client must provide a name, the description is optional.
+  - [x] when adding `resources` the client must provide a name, the description is optional.
+  - [x] when adding a `task` the client must provide a description, the notes are optional.
+  - [x] when adding a `task` the client must provide the `id` of an existing project.
+  - [x] for `projects` and `tasks` if no value is provided for the `completed` property, the API should provide a default value of `false`.
 - [ ] Build an API with endpoints for:
   - [ ] adding resources.
   - [ ] retrieving a list of resources.
